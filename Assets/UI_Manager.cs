@@ -5,13 +5,13 @@ using TMPro;
 public class UI_Manager: MonoBehaviour
 {
     public int ScoreCount;
-
+    private int Amount =150;
     public TextMeshProUGUI ScoreTXT;
 
 
     public void PlusScore()
     {
-        ScoreCount += 15;
+        ScoreCount += Amount;
         if (ScoreCount > 0)
         {
             ScoreTXT.color = Color.green;
@@ -21,7 +21,7 @@ public class UI_Manager: MonoBehaviour
     }
     public void NegativeScore()
     {
-        ScoreCount -= 15;
+        ScoreCount -= Amount;
         if (ScoreCount < 0)
         {
             ScoreTXT.color = Color.red;
@@ -39,6 +39,6 @@ public class UI_Manager: MonoBehaviour
 
     public void UpdateScore()
     {
-        ScoreTXT.text = $"Score: {ScoreCount.ToString()}";
+        ScoreTXT.text = $"Ducky Stocks: {ScoreCount.ToString("N0")}";
     }
 }
